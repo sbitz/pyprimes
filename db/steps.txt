@@ -1,0 +1,5 @@
+docker stack deploy -c example_stack.yml pg_primes
+psql -h localhost -p 25432 -U example_user -d example_db
+
+
+
