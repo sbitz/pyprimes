@@ -18,5 +18,9 @@ class PrimeCursor(object):
         self.base = prime
         self.multiplier = mult
 
+    def next(self):
+        return self.base * (self.multiplier + 2)
 
+    def increment(self):
+        self.multiplier += 2
 
