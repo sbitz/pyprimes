@@ -1,5 +1,6 @@
 from primes.cursor import PrimeCursor
 
+
 class Heap(object):
     def __init__(self, value=None):
         if value is not None:
@@ -27,7 +28,6 @@ class FibHeap(object):
         self._min_node = None
         self._buffer = []
 
-
     def __len__(self):
         if not self._roots:
             return 0
@@ -37,21 +37,20 @@ class FibHeap(object):
         return count
 
     def _add_cursor(self, n):
-        roots.append(Heap(n))
+        self._roots.append(Heap(n))
 
     def get_min(self):
-        value = None
         if self._roots:
             h = self._roots[0]
             value = h.min_value().get()
 
             if self._buffer:
-                return min(value, self.buffer[0])
+                return min(value, self._buffer[0])
             else:
                 return value
         else:  # No Roots
             if self._buffer:
-                return self.buffer[0]
+                return self._buffer[0]
             else:
                 return None
     
