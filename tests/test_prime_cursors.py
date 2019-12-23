@@ -1,6 +1,6 @@
 #! /usr/bin/env python
 
-from primes.cursor import PrimeCursor
+from primes.cursors import PrimeCursor
 
 def test_imports():
     assert True

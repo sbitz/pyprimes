@@ -1,10 +1,12 @@
 #! /usr/env python
-from cursor import Cursor, PrimeCursor
+from cursors import PrimeCursor
+from heaps import FibHeap
 
 
 def mark_prime(value):
     # print('prime: ' + str(value))
     pass
+
 
 def mark_composite(value, tc=None):
     if tc is not None:
@@ -12,8 +14,17 @@ def mark_composite(value, tc=None):
         # print('factor: ' + str(tc.base))
 
 
-def main(primes=[2, 3, 5, 7]):
-    c = Cursor(11, 2)
+def main():
+    checker = FibHeap()
+    next_check = 5
+
+    while next_check < 200:
+        if checker.test(next_check):
+            print(next_check)
+        next_check += 2
+
+
+def main2(primes=[2, 3, 5, 7]):
 
     prime_filters = [PrimeCursor(n) for n in primes[1:]]
     
@@ -44,10 +55,12 @@ def main(primes=[2, 3, 5, 7]):
     for cursor in prime_filters:
         print('Cursor('+ str(cursor.base) + ', ' + str(cursor.next()) +')')
 
+
 if __name__ == '__main__':
     import sys
-    args = [int(n) for n in sys.argv[1:]]
+    # args = [int(n) for n in sys.argv[1:]]
 
-    print('args: ' + str(args))
-    
-    main(args)
+    # print('args: ' + str(args))
+    #
+    # main(args)
+    main()

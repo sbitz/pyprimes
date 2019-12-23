@@ -1,7 +1,7 @@
 def test_basic():
     assert True
 
-from primes.cursor import PrimeCursor
+from primes.cursors import PrimeCursor
 
 
 def test_prime_cursor():

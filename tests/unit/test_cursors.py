@@ -1,4 +1,4 @@
-from primes.cursor import  PrimeCursor
+from primes.cursors import PrimeCursor
 
 
 def test_prime_cursor_mult():
